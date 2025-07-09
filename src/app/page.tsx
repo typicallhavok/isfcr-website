@@ -24,7 +24,7 @@ export default function Home() {
               playsInline
               className="w-full h-full object-cover opacity-20"
             >
-              <source src="https://videos.pexels.com/video-files/3251025/3251025-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              <source src="https://cdn.coverr.co/videos/coverr-a-person-deploying-code-5994/1080p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
         </div>
