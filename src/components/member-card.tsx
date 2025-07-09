@@ -7,13 +7,11 @@ import Link from 'next/link';
 
 export type Member = {
   name: string;
-  avatar: string;
   fallback: string;
   role: string;
   bio: string;
   skills: string[];
   social: {
-    twitter?: string;
     github?: string;
     linkedin?: string;
   };
@@ -23,10 +21,6 @@ export function MemberCard({ member }: { member: Member }) {
   return (
     <Card className="flex flex-col transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20">
       <CardHeader className="items-center text-center">
-        <Avatar className="h-24 w-24 border-2 border-primary">
-          <AvatarImage src={member.avatar} alt={member.name} data-ai-hint="hacker portrait" />
-          <AvatarFallback>{member.fallback}</AvatarFallback>
-        </Avatar>
         <CardTitle className="font-headline pt-4">{member.name}</CardTitle>
         <p className="text-sm text-primary font-medium">{member.role}</p>
       </CardHeader>
@@ -43,13 +37,6 @@ export function MemberCard({ member }: { member: Member }) {
           <Button asChild variant="ghost" size="icon">
             <Link href={member.social.github} target="_blank" rel="noopener noreferrer" aria-label={`${member.name}'s Github`}>
               <Github className="h-5 w-5" />
-            </Link>
-          </Button>
-        )}
-        {member.social.twitter && (
-          <Button asChild variant="ghost" size="icon">
-            <Link href={member.social.twitter} target="_blank" rel="noopener noreferrer" aria-label={`${member.name}'s Twitter`}>
-              <Twitter className="h-5 w-5" />
             </Link>
           </Button>
         )}

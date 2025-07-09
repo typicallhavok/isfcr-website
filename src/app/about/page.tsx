@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import { Target, Flag, Rocket } from 'lucide-react';
+import { Target, Flag, Rocket, Brain, Search, Shield, Globe, HardDrive, Network, Bitcoin, Key } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
@@ -7,12 +7,47 @@ export const metadata: Metadata = {
   title: 'About Us',
 };
 
-const timelineEvents = [
-  { year: '2020', title: 'The Genesis', description: 'A small group of friends with a shared passion for puzzles and code forms ISFCR.' },
-  { year: '2021', title: 'First Blood', description: 'Won our first major online CTF, placing in the top 10 internationally.' },
-  { year: '2022', title: 'Going Pro', description: 'Started participating in DEF CON and other major league CTFs, gaining recognition.' },
-  { year: '2023', title: 'Expanding Horizons', description: 'Grew the team and began offering security consultation services.' },
-  { year: 'Present', title: 'Digital Guardians', description: 'Continuously pushing boundaries in cybersecurity research and competition.' },
+const expertise = [
+  {
+    icon: Brain,
+    title: 'AI Security',
+    description: 'Exploring AI vulnerabilities, adversarial attacks, and securing machine learning systems.'
+  },
+  {
+    icon: Search,
+    title: 'Research',
+    description: 'Conducting cutting-edge research in cybersecurity and publishing findings to the community.'
+  },
+  {
+    icon: Shield,
+    title: 'Attack & Defense',
+    description: 'Mastering both offensive and defensive cybersecurity techniques and strategies.'
+  },
+  {
+    icon: Globe,
+    title: 'Web Exploitation',
+    description: 'Identifying and exploiting web application vulnerabilities and security flaws.'
+  },
+  {
+    icon: HardDrive,
+    title: 'Digital Forensics',
+    description: 'Investigating digital evidence and recovering data from compromised systems.'
+  },
+  {
+    icon: Network,
+    title: 'Network Security',
+    description: 'Securing network infrastructure and analyzing network-based attacks and threats.'
+  },
+  {
+    icon: Bitcoin,
+    title: 'Blockchain',
+    description: 'Exploring blockchain security, smart contract vulnerabilities, and DeFi protocols.'
+  },
+  {
+    icon: Key,
+    title: 'Cryptography',
+    description: 'Implementing and breaking cryptographic algorithms and protocols.'
+  }
 ];
 
 export default function AboutPage() {
@@ -20,12 +55,24 @@ export default function AboutPage() {
     <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000">
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
-              Our Story
+              About ISFCR
             </h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              From a humble beginning to a force in the cybersecurity world. This is the journey of ISFCR.
+              Information Security,
+              Forensics and
+              Cyber Resilience
+            </p>
+            <p className="mt-4 text-lg text-foreground md:text-xl">
+              ISFCR is a cybersecurity-focused student-driven research club and capture-the-flag (CTF) team
+              from PES University, India.
+              Formed under the guidance of faculty from the Department of Computer Science
+              and Engineering, ISFCR serves as a platform for students to explore and research
+              various domains of cybersecurity, including cryptography, web exploitation, reverse
+              engineering, and digital forensics. The team actively participates in CTFs, conducts
+              workshops, and contributes to building a strong cybersecurity culture within the
+              university and beyond.
             </p>
           </div>
         </div>
@@ -58,8 +105,8 @@ export default function AboutPage() {
                     <p className="text-muted-foreground">To share our knowledge and passion with the community, nurturing the next generation of cybersecurity talent.</p>
                   </div>
                 </li>
-                 <li className="flex gap-4">
-                   <div className="bg-primary/20 text-primary p-3 rounded-full h-fit">
+                <li className="flex gap-4">
+                  <div className="bg-primary/20 text-primary p-3 rounded-full h-fit">
                     <Target className="h-6 w-6" />
                   </div>
                   <div>
@@ -71,38 +118,57 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="https://placehold.co/550x550.png"
-                width={550}
-                height={550}
-                alt="Team working"
-                data-ai-hint="team collaboration"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+                src="/banner.svg"
+                alt="About ISFCR"
+                width={600}
+                height={400}
+                className="rounded-lg"
+                data-ai-hint="team photo"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">Our History: A Timeline</h2>
-          <div className="relative mt-12 w-full max-w-3xl mx-auto">
-            <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
-            {timelineEvents.map((event, index) => (
-              <div key={index} className="relative mb-8 flex w-full items-center even:flex-row-reverse">
-                <div className="w-5/12">
-                  <Card className="p-4 bg-card transition-shadow hover:shadow-md hover:shadow-primary/20">
-                    <p className="font-headline text-lg font-bold text-primary">{event.year}</p>
-                    <h3 className="font-bold">{event.title}</h3>
-                    <p className="text-sm text-muted-foreground">{event.description}</p>
+          <div className="mx-auto max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">What We Do</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Our expertise spans across multiple domains of cybersecurity
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {expertise.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <Card 
+                    key={index} 
+                    className="p-6 text-center space-y-4 group cursor-pointer
+                              hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 
+                              transition-all duration-300 ease-out
+                              animate-in fade-in slide-in-from-bottom-8"
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    <div className="bg-primary/20 text-primary p-3 rounded-full h-fit mx-auto w-fit
+                                  group-hover:bg-primary group-hover:text-primary-foreground
+                                  group-hover:scale-110 transition-all duration-300 ease-out
+                                  group-hover:rotate-12">
+                      <IconComponent className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="text-lg font-bold font-headline group-hover:text-primary transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">
+                      {item.description}
+                    </p>
                   </Card>
-                </div>
-                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
-                  <Flag className="h-4 w-4" />
-                </div>
-                <div className="w-5/12"></div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

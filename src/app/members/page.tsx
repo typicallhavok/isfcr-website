@@ -1,40 +1,34 @@
-import { MemberCard, type Member } from '@/components/member-card';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Our Team',
 };
 
-const members: Member[] = [
+const members = [
   {
-    name: 'Alex "Archon" Mercer',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'AM',
-    role: 'Team Lead & Pwner',
+    name: 'Amogh E M',
+    codename: 'Archon',
+    role: 'Team Lead & Pentester',
     bio: 'The strategic mastermind. Archon leads the team with a deep understanding of system architecture and exploitation.',
-    skills: ['Binary Exploitation', 'C/C++', 'Python', 'Leadership', 'GDB'],
+    skills: ['Web Security', 'Javascript', 'Python', 'Burp Suite', 'XSS', 'SQLi'],
     social: {
-      github: '#',
-      twitter: '#',
-      linkedin: '#',
+      github: 'https://github.com/typicallhavok',
+      linkedin: 'https://www.linkedin.com/in/amoghem/',
     },
   },
   {
-    name: 'Ben "Glitch" Carter',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'BC',
-    role: 'Reverse Engineer',
+    name: 'Praneet T H',
+    codename: 'Glitch',
+    role: 'Web Exploitation Expert',
     bio: 'Glitch can take any binary and turn it inside out. Expert in disassembly and malware analysis.',
     skills: ['Reverse Engineering', 'Assembly', 'IDA Pro', 'Ghidra', 'Malware Analysis'],
     social: {
       github: '#',
-      twitter: '#',
     },
   },
   {
     name: 'Chloe "Nyx" Davis',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'CD',
+    codename: 'Nyx',
     role: 'Web Exploitation Expert',
     bio: 'No web server is safe from Nyx. Specializes in finding and exploiting web vulnerabilities.',
     skills: ['Web Security', 'JavaScript', 'SQLi', 'XSS', 'Burp Suite'],
@@ -45,8 +39,7 @@ const members: Member[] = [
   },
   {
     name: 'David "Cipher" Evans',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'DE',
+    codename: 'Cipher',
     role: 'Cryptographer',
     bio: 'Cipher breaks codes for breakfast. From classical ciphers to modern algorithms, nothing is unbreakable.',
     skills: ['Cryptography', 'Mathematics', 'SageMath', 'Python', 'Side-Channel Attacks'],
@@ -56,20 +49,17 @@ const members: Member[] = [
   },
   {
     name: 'Eva "Proxy" Foster',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'EF',
+    codename: 'Proxy',
     role: 'Forensics & Network Analyst',
     bio: 'Proxy pieces together digital crime scenes and deciphers network traffic like no other.',
     skills: ['Digital Forensics', 'Networking', 'Wireshark', 'Volatility', 'Steganography'],
     social: {
-      twitter: '#',
       linkedin: '#',
     },
   },
   {
     name: 'Frank "Root" Green',
-    avatar: 'https://placehold.co/128x128.png',
-    fallback: 'FG',
+    codename: 'Root',
     role: 'OSINT & Social Engineering',
     bio: 'Root can find information on anyone, anywhere. The human element is his favorite vulnerability.',
     skills: ['OSINT', 'Social Engineering', 'Maltego', 'Recon-ng', 'Psychology'],
@@ -79,21 +69,98 @@ const members: Member[] = [
   },
 ];
 
+function TerminalLine({
+  prompt = '>',
+  children,
+  color = 'text-primary',
+}: {
+  prompt?: string;
+  children: React.ReactNode;
+  color?: string;
+}) {
+  return (
+    <div className="flex">
+      <span className="text-destructive mr-2">{prompt}</span>
+      <span className={`font-mono ${color}`}>{children}</span>
+    </div>
+  );
+}
+
+// Button group for top right
+function TerminalButtons() {
+  return (
+    <div className="flex space-x-2 absolute right-6 top-6">
+      <span className="h-3 w-3 rounded-full bg-destructive inline-block"></span>
+      <span className="h-3 w-3 rounded-full bg-primary inline-block"></span>
+      <span className="h-3 w-3 rounded-full bg-accent inline-block"></span>
+    </div>
+  );
+}
+
 export default function MembersPage() {
   return (
-    <div className="container mx-auto px-4 py-12 md:px-6 md:py-24 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-      <div className="mx-auto max-w-3xl text-center mb-12">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
-          Meet the Team
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-          The brilliant minds behind ISFCR. Each member brings a unique set of skills and a shared passion for cybersecurity.
-        </p>
+    <div
+      className="min-h-screen w-full flex flex-col items-center justify-start py-12 px-2"
+      style={{
+        fontFamily: 'Fira Mono, Menlo, monospace',
+      }}
+    >
+      {/* Terminal Header Section */}
+      <div className="w-full max-w-5xl rounded-lg shadow-lg border border-primary bg-card p-6 mb-8 relative">
+        <TerminalButtons />
+        <div className="flex items-center mb-4">
+          <span className="ml-4 text-primary font-bold tracking-widest">_ ISFCR_TERMINAL</span>
+        </div>
+        <TerminalLine color="text-primary">
+          Executing: <span className="text-accent">show_team_details --team="ISFCR"</span>
+        </TerminalLine>
+        <TerminalLine color="text-muted-foreground">... Loading team manifest ...</TerminalLine>
+        <TerminalLine color="text-primary">... Success. Found {members.length} operators.</TerminalLine>
       </div>
-
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
-          <MemberCard key={member.name} member={member} />
+      {/* Members Section */}
+      <div className="w-full max-w-5xl rounded-lg shadow-lg border border-primary bg-card p-6 relative">
+        <TerminalButtons />
+        {members.map((member, idx) => (
+          <div key={member.name} className="mb-8">
+            <TerminalLine prompt=">" color="text-primary">
+              <span>
+                load_operator(<span className="text-accent">'{member.codename}'</span>)
+              </span>
+            </TerminalLine>
+            <div className="ml-8 mt-2 mb-2">
+              <div className="text-primary font-mono">
+                <span className="font-bold">{member.name}</span>{' '}
+                <span className="text-muted-foreground">({member.role})</span>
+              </div>
+              <div className="text-muted-foreground font-mono text-sm mb-1">{member.bio}</div>
+              <div className="text-primary font-mono text-xs mb-1">
+                <span className="text-muted-foreground">Skills:</span> {member.skills.join(', ')}
+              </div>
+              <div className="text-primary font-mono text-xs">
+                {member.social.github && member.social.github !== '#' && (
+                  <a
+                    href={member.social.github}
+                    className="underline text-accent mr-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {member.social.linkedin && member.social.linkedin !== '#' && (
+                  <a
+                    href={member.social.linkedin}
+                    className="underline text-accent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+              </div>
+            </div>
+            {idx < members.length - 1 && <div className="border-b border-muted my-4" />}
+          </div>
         ))}
       </div>
     </div>

@@ -5,35 +5,32 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Target, Trophy } from 'lucide-react';
 
 const teamMembers = [
-  { name: 'Alex "Archon" Mercer', role: 'Team Lead & Pwner', avatar: 'AM' },
-  { name: 'Ben "Glitch" Carter', role: 'Reverse Engineer', avatar: 'BC' },
-  { name: 'Chloe "Nyx" Davis', role: 'Web Exploitation Expert', avatar: 'CD' },
-  { name: 'David "Cipher" Evans', role: 'Cryptographer', avatar: 'DE' },
+  { name: 'Amogh E M', role: 'Team Lead & Pentester', avatar: 'AEM', },
+  { name: 'Praneet T H', role: 'Web Exploitation Expert', avatar: 'PTH' },
+  { name: 'Koushik P', role: 'Cryptographer', avatar: 'KNP' },
+  { name: 'Vamshi K', role: 'Pentester', avatar: 'VK' },
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="relative w-full h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-background/10 backdrop-blur-sm z-10"></div>
+      <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-md z-10"></div>
         <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover opacity-20"
-              poster="https://placehold.co/1920x1080/000000/FFFFFF/png" >
-              <source src="https://youtu.be/sQ22pm-xvrE?si=-ceeDOVUE2p4TqCh" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <iframe
+            className="w-[120%] h-[120%] absolute top-[-10%] left-[-10%] z-[-1] scale-110"
+            src="https://www.youtube.com/embed/sQ22pm-xvrE?autoplay=1&mute=1&loop=1&playlist=sQ22pm-xvrE&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&vq=hd1080"
+            title="Background video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
         <div className="container px-4 md:px-6 z-10 animate-in fade-in slide-in-from-bottom-12 duration-1000">
           <div className="max-w-3xl mx-auto">
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
               ISFCR
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+            <p className="mt-4 text-lg text-foreground md:text-xl">
               Masters of the Digital Realm. We are a passionate team of cybersecurity enthusiasts dedicated to solving the most complex challenges in the digital world.
             </p>
             <div className="mt-8 flex justify-center gap-4">
@@ -53,7 +50,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary">Our Expertise</div>
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">What We Do Best</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">FOCUS</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We thrive on complex problems across all major Capture The Flag categories.
               </p>
@@ -72,14 +69,14 @@ export default function Home() {
             <div className="grid gap-2 text-center items-center justify-center">
               <div className="flex items-center justify-center">
                 <div className="bg-accent/20 p-4 rounded-full">
-                    <Target className="h-10 w-10 text-accent" />
+                  <Target className="h-10 w-10 text-accent" />
                 </div>
               </div>
               <h3 className="text-xl font-bold font-headline">Vulnerability Research</h3>
               <p className="text-sm text-muted-foreground">Discovering and responsibly disclosing zero-day vulnerabilities in real-world systems.</p>
             </div>
             <div className="grid gap-2 text-center items-center justify-center">
-                <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <div className="bg-accent/20 p-4 rounded-full">
                   <Shield className="h-10 w-10 text-accent" />
                 </div>
@@ -106,7 +103,7 @@ export default function Home() {
               <Card key={member.name} className="border-none bg-background/50 text-center transition-transform duration-300 hover:scale-105 hover:shadow-primary/20 shadow-lg">
                 <CardContent className="flex flex-col items-center gap-4 pt-6">
                   <Avatar className="h-24 w-24 border-2 border-primary">
-                    <AvatarImage src={`https://placehold.co/100x100.png`} data-ai-hint="hacker portrait" />
+                    {/* <AvatarImage src={`https://placehold.co/100x100.png`} data-ai-hint="hacker portrait" /> */}
                     <AvatarFallback>{member.avatar}</AvatarFallback>
                   </Avatar>
                   <div className="grid gap-1">
@@ -117,10 +114,10 @@ export default function Home() {
               </Card>
             ))}
           </div>
-            <div className="text-center mt-12">
-                <Button asChild>
-                  <Link href="/members">View All Members <ArrowRight className="ml-2 h-4 w-4"/></Link>
-              </Button>
+          <div className="text-center mt-12">
+            <Button asChild>
+              <Link href="/members">View All Members <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
