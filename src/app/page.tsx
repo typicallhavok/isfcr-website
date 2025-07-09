@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10"></div>
+        <div className="absolute inset-0 bg-background/10 backdrop-blur-sm z-10"></div>
         <div className="absolute inset-0 z-0">
             <video
               autoPlay
@@ -23,8 +23,8 @@ export default function Home() {
               muted
               playsInline
               className="w-full h-full object-cover opacity-20"
-            >
-              <source src="https://cdn.coverr.co/videos/coverr-a-person-deploying-code-5994/1080p.mp4" type="video/mp4" />
+              poster="https://placehold.co/1920x1080/000000/FFFFFF/png" >
+              <source src="https://youtu.be/sQ22pm-xvrE?si=-ceeDOVUE2p4TqCh" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
         </div>
