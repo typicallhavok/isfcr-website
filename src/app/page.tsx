@@ -2,7 +2,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight, Shield, Target, Trophy } from 'lucide-react';
 
 const teamMembers = [
@@ -18,14 +17,16 @@ export default function Home() {
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10"></div>
         <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://placehold.co/1920x1080.png" 
-              alt="Cybersecurity background"
-              data-ai-hint="cybersecurity abstract"
-              fill={true}
-              objectFit="cover"
-              className="opacity-20"
-            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-20"
+            >
+              <source src="https://videos.pexels.com/video-files/3251025/3251025-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
         </div>
         <div className="container px-4 md:px-6 z-10 animate-in fade-in slide-in-from-bottom-12 duration-1000">
           <div className="max-w-3xl mx-auto">
