@@ -8,13 +8,14 @@ import Link from 'next/link';
 export type Member = {
   name: string;
   fallback: string;
-  role: string;
+  role?: string;
   bio: string;
   skills: string[];
   social: {
     github?: string;
     linkedin?: string;
   };
+  categories: string[];
 };
 
 export function MemberCard({ member }: { member: Member }) {
