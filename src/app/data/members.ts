@@ -28,7 +28,7 @@ const members = [
     {
         name: 'Praneet T H',
         codename: 'Nyx',
-        role: 'Reverse Engineer',
+        role: 'Web Exploitation Expert',
         bio: 'No web server is safe from Nyx. Specializes in finding and exploiting web vulnerabilities.',
         skills: ['Web Security', 'SQLi', 'XSS', 'Burp Suite'],
         social: {
@@ -74,7 +74,7 @@ const members = [
         categories: ["core", "ctf"],
     },
     {
-        name: 'Amogh S K',
+        name: 'Amogh K',
         codename: 'Proxy',
         role: 'Cipher',
         bio: 'Cipher breaks codes for breakfast. From classical ciphers to modern algorithms, nothing is unbreakable.',

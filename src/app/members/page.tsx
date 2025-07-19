@@ -105,7 +105,7 @@ export default function MembersPage() {
             <TerminalLine color="text-primary">
               Executing: <span className="text-accent">init_filter_system()</span>
             </TerminalLine>
-            <TerminalLine color="text-muted-foreground">... Loading filter options ...</TerminalLine>
+            <TerminalLine color="dark:text-muted-foreground">... Loading filter options ...</TerminalLine>
 
             {/* Search Bar */}
             <div className="mt-4 mb-4">
@@ -146,7 +146,7 @@ export default function MembersPage() {
 
             {/* Status */}
             <div className="mt-4">
-              <TerminalLine color="text-muted-foreground">
+              <TerminalLine color="dark:text-muted-foreground">
                 Status: Showing {totalFilteredCount} of {members.length} operators
               </TerminalLine>
               <TerminalLine color="text-primary">
@@ -174,7 +174,7 @@ export default function MembersPage() {
               <TerminalLine color="text-primary">
                 Executing: <span className="text-accent">show_team_details --team="ISFCR"</span>
               </TerminalLine>
-              <TerminalLine color="text-muted-foreground">... Loading team manifest ...</TerminalLine>
+              <TerminalLine color="dark:text-muted-foreground">... Loading team manifest ...</TerminalLine>
               <TerminalLine color="text-primary">... Success. Found {totalFilteredCount} operators.</TerminalLine>
             </motion.div>
           </AnimatePresence>
@@ -208,7 +208,7 @@ export default function MembersPage() {
                   <TerminalLine color="text-primary">
                     Executing: <span className="text-accent">list_operators --category="{category}"</span>
                   </TerminalLine>
-                  <TerminalLine color="text-muted-foreground">... Retrieving operator data ...</TerminalLine>
+                  <TerminalLine color="dark:text-muted-foreground">... Retrieving operator data ...</TerminalLine>
                   <TerminalLine color="text-primary">
                     ... Found {categoryMembers.length} operators in {category.toUpperCase()}
                   </TerminalLine>
@@ -222,12 +222,12 @@ export default function MembersPage() {
                       </TerminalLine>
                       <div className="ml-8 mt-2 mb-2">
                         <div className="text-primary font-mono">
-                          <span className="font-bold">{member.name}</span>{' '}
-                          {member.role&&<span className="text-muted-foreground">({member.role})</span>}
+                          <span className="font-bold text-xl">{member.name}</span>{' '}
+                          {member.role&&<span className="dark:text-muted-foreground">({member.role})</span>}
                         </div>
-                        <div className="text-muted-foreground font-mono text-sm mb-1">{member.bio}</div>
+                        <div className="dark:text-muted-foreground font-mono text-sm mb-1">{member.bio}</div>
                         {member.skills && (<div className="text-primary font-mono text-xs mb-1">
-                          <span className="text-muted-foreground">Skills:</span> {member.skills?.join(', ')}
+                          <span className="dark:text-muted-foreground">Skills:</span> {member.skills?.join(', ')}
                         </div>)}
                         <div className="text-primary font-mono text-xs">
                           {member.social.github && member.social.github !== '#' && (
