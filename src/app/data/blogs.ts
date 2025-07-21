@@ -10,6 +10,9 @@ export interface BlogPost {
   tags: string[];
   readTime: number;
   featured?: boolean;
+  imageUrl?: string;
+  imageAlt?: string;
+  thumbnailUrl?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -38,7 +41,10 @@ Stay tuned for more technical deep-dives from the ISFCR team!`,
     category: "Web Security",
     tags: ["web", "vulnerabilities", "owasp", "ctf"],
     readTime: 8,
-    featured: true
+    featured: true,
+    imageUrl: "/banner.svg",
+    imageAlt: "Web Security Vulnerabilities Diagram",
+    thumbnailUrl: "/banner.svg"
   },
   {
     id: "cryptography-in-ctfs",
@@ -62,7 +68,10 @@ CTF crypto challenges increasingly mirror real-world cryptographic implementatio
     date: "2024-12-10",
     category: "Cryptography",
     tags: ["crypto", "rsa", "mathematics", "ctf"],
-    readTime: 6
+    readTime: 6,
+    imageUrl: "/logo.png",
+    imageAlt: "Cryptography and Mathematical Concepts",
+    thumbnailUrl: "/logo.png"
   },
   {
     id: "penetration-testing-methodology",
@@ -91,7 +100,10 @@ Clear, actionable reporting is essential for helping organizations improve their
     category: "Penetration Testing",
     tags: ["pentest", "methodology", "security", "assessment"],
     readTime: 10,
-    featured: true
+    featured: true,
+    imageUrl: "/banner.svg",
+    imageAlt: "Penetration Testing Methodology Workflow",
+    thumbnailUrl: "/banner.svg"
   },
   {
     id: "reverse-engineering-fundamentals",
@@ -115,7 +127,10 @@ Modern malware and CTF challenges often include anti-debugging and obfuscation t
     date: "2024-11-28",
     category: "Reverse Engineering",
     tags: ["reverse", "analysis", "debugging", "malware"],
-    readTime: 7
+    readTime: 7,
+    imageUrl: "/logo-transparent.png",
+    imageAlt: "Reverse Engineering Tools and Analysis",
+    thumbnailUrl: "/logo-transparent.png"
   },
   {
     id: "incident-response-lessons",
@@ -139,7 +154,10 @@ The goal is not just to recover from an incident, but to emerge stronger with im
     date: "2024-11-20",
     category: "Incident Response",
     tags: ["incident", "response", "forensics", "defense"],
-    readTime: 9
+    readTime: 9,
+    imageUrl: "/ctftime.svg",
+    imageAlt: "Incident Response Process and Timeline",
+    thumbnailUrl: "/ctftime.svg"
   }
 ];
 
