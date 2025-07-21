@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const teamMembers = [
   { name: 'Amogh E M', role: 'Team Lead & Pentester', avatar:'AEM' },
-  { name: 'Praneet T H', role: 'Web Exploitation Expert', avatar: <Image src="/prant.png" width={94} height={94} alt="PTH"/> },
+  { name: 'Praneet T H', role: 'Web Exploitation Expert', avatar: <Image src="/praneet.png" width={94} height={94} alt="PTH"/> },
   { name: 'Koushik P', role: 'Cryptographer', avatar: 'KNP' },
   { name: 'Vamshi K', role: 'Pentester', avatar: 'VK' },
 ];
@@ -123,6 +123,55 @@ export default function Home() {
         </div>
         
       </section>
+
+      <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-background/20">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm text-primary">Latest Insights</div>
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">From Our Blog</h2>
+              <p className="max-w-[900px] dark:text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Deep dives into cybersecurity research, CTF writeups, and the latest developments in information security.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none mt-12">
+            <div className="grid gap-2 text-center items-center justify-center">
+              <div className="flex items-center justify-center">
+                <div className="bg-accent/20 p-4 rounded-full">
+                  <Brain className="h-10 w-10 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold font-headline">Technical Research</h3>
+              <p className="text-sm dark:text-muted-foreground">In-depth analysis of vulnerabilities, attack techniques, and defense strategies.</p>
+            </div>
+            <div className="grid gap-2 text-center items-center justify-center">
+              <div className="flex items-center justify-center">
+                <div className="bg-accent/20 p-4 rounded-full">
+                  <Flag className="h-10 w-10 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold font-headline">CTF Writeups</h3>
+              <p className="text-sm dark:text-muted-foreground">Detailed solutions to challenging CTF problems across all categories.</p>
+            </div>
+            <div className="grid gap-2 text-center items-center justify-center">
+              <div className="flex items-center justify-center">
+                <div className="bg-accent/20 p-4 rounded-full">
+                  <Rocket className="h-10 w-10 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold font-headline">Industry Insights</h3>
+              <p className="text-sm dark:text-muted-foreground">Latest trends, tools, and best practices in the cybersecurity landscape.</p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Button asChild size="lg">
+              <Link href="/blog">Read Our Blog <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-4xl text-center">
